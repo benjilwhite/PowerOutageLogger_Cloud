@@ -3,7 +3,7 @@
 This program on the Raspberry pi reads in the serial data sent from the arduino and sends it to a REST API. 
 
 
-It should be configured to run when the Raspberry Pi starts up following a power outage using autostart
+It should be configured to run when the Raspberry Pi starts up following a power outage using autostart.
 
 
 To do this, run the following commands in the Raspberry Pi command line:
@@ -19,4 +19,4 @@ Type=Application
 Name=OutageLogger
 Exec=/usr/bin/python3 /home/pi/logger.py
 ```
-Now the program should be executed on startup
+Now the program should be executed on startup.
