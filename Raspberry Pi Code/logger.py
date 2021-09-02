@@ -27,7 +27,7 @@ maxTemp = a[20:]
 # tests for internet connecting
 def connect():
     try:
-        response = urllib.request.urlopen('http://google.com')
+        urllib.request.urlopen('http://google.com')
         return True
     except:
         return False
