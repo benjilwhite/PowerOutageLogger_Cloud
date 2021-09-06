@@ -1,1 +1,1 @@
-
+This code is mostly unchanged from [JChristensen's](https://github.com/JChristensen) original v1.1 power outage logger. It allows for temperatures to be recorded alongside power outages at the expense of less outages being stored. In addition, it is designed to send data of the outage over a serial USB connection to the Raspberry Pi.
