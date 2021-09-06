@@ -1,8 +1,10 @@
 # A Cloud Enabled Power Outage Logger
 
-This project is an extension/modification of [JChristensen's](https://github.com/JChristensen) original [PowerOutageMonitor_HW](https://github.com/JChristensen/PowerOutageMonitor_HW) and [PowerOutageMonitor_SW](https://github.com/JChristensen/PowerOutageMonitor_SW). This code enables the arduino-based board to send power outage data via a serial connection to a Raspberry Pi once the power comes back on. Once the Raspberry Pi re-establishes an internet connection after a power outage, it sends the outage data to a REST API in AWS, where it can be stored in DynamoDB and sent to the user in an email message.
+This project is an extension/modification of [JChristensen's](https://github.com/JChristensen) original [PowerOutageMonitor_HW](https://github.com/JChristensen/PowerOutageMonitor_HW) and [PowerOutageMonitor_SW](https://github.com/JChristensen/PowerOutageMonitor_SW). In addition to recording the start and end times of power outages, this code records the temperature at the end of the outage. This allows the device to be mounted near a fridge to help determing whether food has gone bad during an extended power outage.
 
-## How it Works
+The code also enables the arduino-based board to send power outage data via a serial connection to a Raspberry Pi once the power comes back on. Once the Raspberry Pi re-establishes an internet connection after a power outage, it sends the outage data to a REST API in AWS, where it can be stored in DynamoDB and sent to the user in an email message.
+
+## How the Cloud Functionality Works
 
 The [PowerOutageMonitor](https://github.com/JChristensen/PowerOutageMonitor_SW) code works almost entirely the same as the original, except for a few lines of code in the `void setup()` function which send data of the previous outage to the Raspberry Pi via an FTDI adapter plugged into the board. Once the Raspberry Pi receives the data and has a stable internet connection, it sends the data to a REST API via an HTTP POST request in AWS API Gateway.
 
